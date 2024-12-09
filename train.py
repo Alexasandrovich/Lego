@@ -28,7 +28,7 @@ def main():
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
     best_val_acc = 0.0
-    epochs = 10
+    epochs = 50
     for epoch in range(epochs):
         print(f"Epoch {epoch + 1}/{epochs}")
 
@@ -41,11 +41,7 @@ def main():
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), 'best_model.pth')
-
-    # Тестирование лучшей модели
-    model.load_state_dict(torch.load('best_model.pth'))
-    test_loss, test_acc = evaluate(model, test_loader, device)
-    print(f"Test loss: {test_loss:.4f}, Test acc: {test_acc:.4f}")
+        torch.save(model.state_dict(), 'model.pth')
 
 
 if __name__ == '__main__':

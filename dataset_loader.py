@@ -97,7 +97,7 @@ class LegoDataset(Dataset):
         center_x_small, center_y_small = self.downscale_width // 2, downscale_h // 2
 
         # OTSU бинаризация
-        _, img_bin = cv2.threshold(img_small, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        _, img_bin = cv2.threshold(img_small, 0, 255, cv2.THRESH_OTSU)
         # Инверсия
         img_bin = 255 - img_bin
 
