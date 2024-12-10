@@ -51,7 +51,7 @@ if __name__ == "__main__":
     split_dataset(
         src_dir='/data/alex/LEGO_dataset/full',
         dst_dir='/data/alex/LEGO_dataset/spilt',
-        train_ratio=0.9,
-        val_ratio=0.1,
+        train_ratio=1.0,
+        val_ratio=0.0,
         test_ratio=0.0
     )
